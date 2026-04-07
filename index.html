@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Henrique Vergili - Spotify Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <div class="logo">
+                <span>Portfolio</span>
+            </div>
+            <ul>
+                <li class="active"><a href="#" onclick="scrollToSection('home-section'); return false;"><svg
+                            viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12.5 3.247a1 1 0 0 0-1 0L4 7.577V20h4.5v-6a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v6H20V7.577l-7.5-4.33z" />
+                        </svg> Home</a></li>
+                <li><a href="#" onclick="scrollToSection('projects-section'); return false;"><svg viewBox="0 0 24 24"
+                            fill="currentColor">
+                            <path
+                                d="M10.533 1.279c-5.18 0-9.407 4.14-9.407 9.279s4.226 9.279 9.407 9.279c2.234 0 4.29-.77 5.907-2.058l4.353 4.353a1 1 0 1 0 1.414-1.414l-4.344-4.344a9.157 9.157 0 0 0 2.077-5.816c0-5.14-4.226-9.28-9.407-9.28zm-7.407 9.279c0-4.006 3.302-7.28 7.407-7.28s7.407 3.274 7.407 7.28-3.302 7.279-7.407 7.279-7.407-3.273-7.407-7.279z" />
+                        </svg> Projects</a></li>
+                <li><a href="#" onclick="scrollToSection('education-section'); return false;"><svg viewBox="0 0 24 24"
+                            fill="currentColor">
+                            <path
+                                d="M14.5 2.134a1 1 0 0 1 1 0l6 3.464a1 1 0 0 1 .5.866V21a1 1 0 0 1-1 1h-6a1 1 0 0 1-1-1V3a1 1 0 0 1 .5-.866zM16 4.732V20h4V7.041l-4-2.309zM3 22a1 1 0 0 1-1-1V3a1 1 0 0 1 2 0v18a1 1 0 0 1-1 1zm6 0a1 1 0 0 1-1-1V3a1 1 0 0 1 2 0v18a1 1 0 0 1-1 1z" />
+                        </svg> Graduation</a></li>
+                <li><a href="#" onclick="scrollToSection('skills-section'); return false;"><svg viewBox="0 0 24 24"
+                            fill="currentColor">
+                            <path
+                                d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" />
+                        </svg> Skills</a></li>
+                <li><a href="#" onclick="scrollToSection('contacts-section'); return false;"><svg viewBox="0 0 24 24"
+                            fill="currentColor">
+                            <path
+                                d="M17.3 1.95A4.5 4.5 0 0 0 14.12 1h-4.24a4.5 4.5 0 0 0-3.18.95A4.32 4.32 0 0 0 5 5.5v13a4.32 4.32 0 0 0 1.7 3.55A4.5 4.5 0 0 0 9.88 23h4.24a4.5 4.5 0 0 0 3.18-.95A4.32 4.32 0 0 0 19 18.5v-13a4.32 4.32 0 0 0-1.7-3.55zM15 13H9v-2h6v2z" />
+                        </svg> Contacts</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content" id="main-scroll">
+
+            <!-- Global Top Bar -->
+            <div class="top-nav">
+                <div class="top-bar-left">
+                    <button class="nav-arrow" aria-label="Go home" onclick="scrollToSection('home-section')">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+                            <path
+                                d="M12.5 3.247a1 1 0 0 0-1 0L4 7.577V20h4.5v-6a1 1 0 0 1 1-1h5a1 1 0 0 1 1 1v6H20V7.577l-7.5-4.33z" />
+                        </svg>
+                    </button>
+                    <div class="search-bar">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M10.533 1.279c-5.18 0-9.407 4.14-9.407 9.279s4.226 9.279 9.407 9.279c2.234 0 4.29-.77 5.907-2.058l4.353 4.353a1 1 0 1 0 1.414-1.414l-4.344-4.344a9.157 9.157 0 0 0 2.077-5.816c0-5.14-4.226-9.28-9.407-9.28zm-7.407 9.279c0-4.006 3.302-7.28 7.407-7.28s7.407 3.274 7.407 7.28-3.302 7.279-7.407 7.279-7.407-3.273-7.407-7.279z" />
+                        </svg>
+                        <input type="text" placeholder="What do you want to know?">
+                    </div>
+                </div>
+                <div class="top-bar-right">
+                    <button class="icon-toggle" onclick="toggleSidebar('about')" title="About Me">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z" />
+                        </svg>
+                    </button>
+                    <button class="icon-toggle" onclick="toggleSidebar('songs')" title="My Playlist">
+                        <svg viewBox="0 0 16 16" fill="currentColor">
+                            <path
+                                d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm.01 5.99a2.01 2.01 0 1 1 0 4.02 2.01 2.01 0 0 1 0-4.02zM1.69 8.63A6.53 6.53 0 0 1 8 1.5c1.17 0 2.27.31 3.22.84l-2.03 2A4.01 4.01 0 0 0 4.67 8.86l-2.98-.23zm2.5 4.31l2-2.01a4 4 0 0 0 5.48-1.89l2.84 1A6.5 6.5 0 0 1 4.19 12.94z" />
+                        </svg>
+                    </button>
+                    <div class="profile-pill">
+                        <img src="./Photos/perfil.png" alt="Me">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Profile Header -->
+            <header class="profile-header" id="home-section">
+                <div class="profile-info">
+                    <img src="./Photos/perfil.png" class="profile-img" alt="Profile Picture">
+                    <div class="profile-details">
+                        <span class="profile-type">Profile</span>
+                        <h1 class="profile-name">Henrique Vergili<br>de Freitas Dias</h1>
+                        <p class="profile-stats">4 Projects • 24 Years old</p>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Projects Section -->
+            <section class="section" id="projects-section">
+                <h2>Projects</h2>
+                <div class="cards-grid">
+                    <div class="card"
+                        onclick="openProjectModal('E-Commerce Platform', 'A full-stack e-commerce platform built with modern technologies focusing on high performance and seamless user experience.', 'https://picsum.photos/seed/proj1/200/200')">
+                        <img src="https://picsum.photos/seed/proj1/200/200" alt="Project Cover">
+                        <h3>E-Commerce Platform</h3>
+                        <p>Web Application</p>
+                        <button class="play-btn"><svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="m7.05 3.606 13.49 7.788a.7.7 0 0 1 0 1.212L7.05 20.394A.7.7 0 0 1 6 19.788V4.212a.7.7 0 0 1 1.05-.606z" />
+                            </svg></button>
+                    </div>
+                    <div class="card"
+                        onclick="openProjectModal('Data Dashboard', 'Real-time data visualization dashboard for tracking metrics.', 'https://picsum.photos/seed/proj2/200/200')">
+                        <img src="https://picsum.photos/seed/proj2/200/200" alt="Project Cover">
+                        <h3>Data Dashboard</h3>
+                        <p>Analytics Tool</p>
+                        <button class="play-btn"><svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="m7.05 3.606 13.49 7.788a.7.7 0 0 1 0 1.212L7.05 20.394A.7.7 0 0 1 6 19.788V4.212a.7.7 0 0 1 1.05-.606z" />
+                            </svg></button>
+                    </div>
+                    <div class="card"
+                        onclick="openProjectModal('Task Manager AI', 'AI-powered task manager to heavily improve your productivity.', 'https://picsum.photos/seed/proj3/200/200')">
+                        <img src="https://picsum.photos/seed/proj3/200/200" alt="Project Cover">
+                        <h3>Task Manager AI</h3>
+                        <p>Productivity System</p>
+                        <button class="play-btn"><svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="m7.05 3.606 13.49 7.788a.7.7 0 0 1 0 1.212L7.05 20.394A.7.7 0 0 1 6 19.788V4.212a.7.7 0 0 1 1.05-.606z" />
+                            </svg></button>
+                    </div>
+                    <div class="card"
+                        onclick="openProjectModal('Spotify Portfolio', 'This beautiful web portfolio replicating the Spotify app experience.', 'https://picsum.photos/seed/proj4/200/200')">
+                        <img src="https://picsum.photos/seed/proj4/200/200" alt="Project Cover">
+                        <h3>Spotify Portfolio</h3>
+                        <p>Frontend UI/UX</p>
+                        <button class="play-btn"><svg viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="m7.05 3.606 13.49 7.788a.7.7 0 0 1 0 1.212L7.05 20.394A.7.7 0 0 1 6 19.788V4.212a.7.7 0 0 1 1.05-.606z" />
+                            </svg></button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Education Section -->
+            <section class="section" id="education-section">
+                <h2>Graduation & Certificates</h2>
+                <div class="list-view">
+                    <div class="list-header">
+                        <div>#</div>
+                        <div>Title</div>
+                        <div>Institution</div>
+                        <div>Date</div>
+                    </div>
+                    <div class="list-row"
+                        onclick="openCertificateModal('Software Engineer Degree', 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf')">
+                        <div>1</div>
+                        <div class="col-title"><img src="./Photos/puc.png" class="row-img"><span>Software
+                                Engineer</span></div>
+                        <div>Pontíficia Universidade Católica de Campinas</div>
+                        <div>2025</div>
+                    </div>
+                    <div class="list-row" onclick="openCertificateModal('Add Certificate', null)">
+                        <div>2</div>
+                        <div class="col-title"><img src="./Photos/alura.png" class="row-img"><span>React: Como os
+                                componentes funcionam</span></div>
+                        <div>Alura</div>
+                        <div>2024</div>
+                    </div>
+                    <div class="list-row" onclick="openCertificateModal('Add Certificate', null)">
+                        <div>3</div>
+                        <div class="col-title"><img src="./Photos/alura.png" class="row-img"><span>React: Como os
+                                componentes funcionam</span></div>
+                        <div>Alura</div>
+                        <div>2024</div>
+                    </div>
+                    <div class="list-row" onclick="openCertificateModal('Add Certificate', null)">
+                        <div>4</div>
+                        <div class="col-title"><img src="./Photos/alura.png" class="row-img"><span>React: Desenvolvendo
+                                com JavaScript</span></div>
+                        <div>Alura</div>
+                        <div>2024</div>
+                    </div>
+                    <div class="list-row" onclick="openCertificateModal('Add Certificate', null)">
+                        <div>5</div>
+                        <div class="col-title">
+                            <div class="row-placeholder"></div><span>Add Certificate...</span>
+                        </div>
+                        <div>-</div>
+                        <div>-</div>
+                    </div>
+                    <div class="list-row" onclick="openCertificateModal('Add Certificate', null)">
+                        <div>5</div>
+                        <div class="col-title">
+                            <div class="row-placeholder"></div><span>Add Certificate...</span>
+                        </div>
+                        <div>-</div>
+                        <div>-</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Skills Section -->
+            <section class="section" id="skills-section">
+                <div class="section-header">
+                    <h2>Skills</h2>
+                    <span onclick="openAllSkillsModal()">Show all</span>
+                </div>
+                <div class="skills-grid-main">
+                    <div class="skills-item">
+                        <img src="./Photos/js.png" alt="JavaScript">
+                        <span class="skill-title">JavaScript</span>
+                        <span class="skill-sub">Programming</span>
+                    </div>
+                    <div class="skills-item">
+                        <img src="./Photos/python.png" alt="Python">
+                        <span class="skill-title">Python</span>
+                        <span class="skill-sub">Programming</span>
+                    </div>
+                    <div class="skills-item">
+                        <img src="./Photos/react.png" alt="React">
+                        <span class="skill-title">React</span>
+                        <span class="skill-sub">Framework</span>
+                    </div>
+                    <div class="skills-item">
+                        <img src="./Photos/node.png" alt="Node.js">
+                        <span class="skill-title">Node.js</span>
+                        <span class="skill-sub">Runtime</span>
+                    </div>
+                    <div class="skills-item">
+                        <img src="./Photos/ionic.png" alt="Ionic">
+                        <span class="skill-title">Ionic</span>
+                        <span class="skill-sub">Mobile</span>
+                    </div>
+                    <div class="skills-item">
+                        <img src="./Photos/html.png" alt="HTML5">
+                        <span class="skill-title">HTML5</span>
+                        <span class="skill-sub">Markup</span>
+                    </div>
+                    <div class="skills-item">
+                        <img src="./Photos/css.png" alt="CSS">
+                        <span class="skill-title">CSS</span>
+                        <span class="skill-sub">Styling</span>
+                    </div>
+                    <div class="skills-item">
+                        <img src="https://picsum.photos/seed/git/150/150" alt="Git">
+                        <span class="skill-title">Git</span>
+                        <span class="skill-sub">Version Control</span>
+                    </div>
+                    <div class="skills-item">
+                        <img src="https://picsum.photos/seed/awq/150/150" alt="AWS">
+                        <span class="skill-title">AWS</span>
+                        <span class="skill-sub">Cloud computing</span>
+                    </div>
+                    <div class="skills-item">
+                        <img src="https://picsum.photos/seed/sql/150/150" alt="Docker">
+                        <span class="skill-title">Docker</span>
+                        <span class="skill-sub">System</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Footer / Contacts -->
+            <section class="section footer" id="contacts-section">
+                <div class="footer-columns centered-footer">
+                    <div class="footer-col">
+                        <h4>Contact Me</h4>
+                        <ul>
+                            <li><a href="#">Email Address</a></li>
+                            <li><a href="#">Phone Number</a></li>
+                            <li><a href="#">WhatsApp</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Social Links</h4>
+                        <ul>
+                            <li><a href="#"><svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path
+                                            d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                                    </svg> LinkedIn</a></li>
+                            <li><a href="#"><svg viewBox="0 0 24 24" fill="currentColor">
+                                        <path
+                                            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                                    </svg> Instagram</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <hr class="footer-divider">
+                <div class="footer-bottom">
+                    <div class="footer-bottom-links">
+                        <a href="#">Legal</a>
+                        <a href="#">Privacy Center</a>
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Cookies</a>
+                        <a href="#">About</a>
+                    </div>
+                    <span>© 2026 Henrique Vergili de Freitas Dias</span>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Right Sidebar (Dynamic state) -->
+        <aside class="right-sidebar">
+            <div id="sidebar-about">
+                <h2>About Me</h2>
+                <div class="about-content">
+                    <p>Hello! I am Henrique, a dedicated Software Engineer graduated from Pontíficia Universidade
+                        Católica de Campinas in 2025.</p>
+                    <p>I have a passion for building robust scalable systems and beautiful user interfaces.</p>
+                    <p>My journey in technology consists of constantly exploring new frameworks, refining my backend
+                        architecture skills, and crafting seamless digital experiences.</p>
+                </div>
+            </div>
+
+            <div id="sidebar-songs" style="display: none;">
+                <h2>Queue</h2>
+                <h4 style="color: var(--text-base); font-size: 14px; margin-bottom: 12px; margin-top: 16px;">Next in
+                    queue</h4>
+                <div class="songs-list">
+                    <div class="list-row song-row">
+                        <img src="./Photos/lizt.png" class="row-img">
+                        <div class="song-details">
+                            <span class="track-title">La Campanella</span>
+                            <span class="track-artist">Franz Liszt / Lang Lang</span>
+                        </div>
+                    </div>
+                    <div class="list-row song-row">
+                        <img src="./Photos/opeth.png" class="row-img">
+                        <div class="song-details">
+                            <span class="track-title">Dirge for November</span>
+                            <span class="track-artist">Opeth</span>
+                        </div>
+                    </div>
+                    <div class="list-row song-row">
+                        <img src="./Photos/SoI.png" class="row-img">
+                        <div class="song-details">
+                            <span class="track-title">From Ruin We Rise</span>
+                            <span class="track-artist">Shadow of Intent</span>
+                        </div>
+                    </div>
+                    <div class="list-row song-row">
+                        <img src="./Photos/porcupine.png" class="row-img">
+                        <div class="song-details">
+                            <span class="track-title">Russia on Ice</span>
+                            <span class="track-artist">Porcupine Tree</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Bottom Playing Bar -->
+        <footer class="playing-bar">
+            <div class="playing-info">
+                <img src="https://picsum.photos/seed/vibe7/56/56" alt="Album Cover" class="album-cover">
+                <div class="track-info">
+                    <span class="track-name">Current Vibe: Building Things</span>
+                    <span class="artist-name">Coding Session</span>
+                </div>
+                <button class="icon-toggle active" style="color: var(--accent);"><svg viewBox="0 0 16 16"
+                        fill="currentColor">
+                        <path
+                            d="M1.69 2A4.582 4.582 0 0 1 8 2.023 4.583 4.583 0 0 1 11.88.817h.002a4.618 4.618 0 0 1 3.782 3.65v.003a4.543 4.543 0 0 1-1.011 3.84L9.35 14.629a1.765 1.765 0 0 1-2.093.464 1.762 1.762 0 0 1-1.15-1.463L.83 8.31a4.543 4.543 0 0 1-1.011-3.84A4.618 4.618 0 0 1 3.6 1.05z" />
+                    </svg></button>
+            </div>
+
+            <div class="player-controls">
+                <div class="controls-buttons">
+                    <button class="player-btn"><svg viewBox="0 0 16 16" fill="currentColor">
+                            <path
+                                d="M13.151.922a.75.75 0 1 0-1.06 1.06L13.109 3H11.16a3.75 3.75 0 0 0-2.873 1.34l-6.173 7.356A2.25 2.25 0 0 1 .39 12.5H0V14h.391a3.75 3.75 0 0 0 2.873-1.34l6.173-7.356a2.25 2.25 0 0 1 1.724-.804h1.947l-1.018 1.018a.75.75 0 0 0 1.06 1.06L15.98 3.743a.75.75 0 0 0 0-1.06L13.151.922zM15 12h-2v-1.5h2V12zM0 3.5h2v1.5H0v-1.5z" />
+                        </svg></button>
+                    <button class="player-btn"><svg viewBox="0 0 16 16" fill="currentColor">
+                            <path
+                                d="M3.3 1a.7.7 0 0 1 .7.7v5.15l9.95-5.744a.7.7 0 0 1 1.05.606v12.575a.7.7 0 0 1-1.05.607L4 9.149V14.3a.7.7 0 0 1-.7.7H1.7a.7.7 0 0 1-.7-.7V1.7a.7.7 0 0 1 .7-.7h1.6z" />
+                        </svg></button>
+                    <button class="player-btn play-circle"><svg viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M5.7 3a.7.7 0 0 0-.7.7v16.6a.7.7 0 0 0 .7.7h2.6a.7.7 0 0 0 .7-.7V3.7a.7.7 0 0 0-.7-.7H5.7zm10 0a.7.7 0 0 0-.7.7v16.6a.7.7 0 0 0 .7.7h2.6a.7.7 0 0 0 .7-.7V3.7a.7.7 0 0 0-.7-.7h-2.6z" />
+                        </svg></button>
+                    <button class="player-btn"><svg viewBox="0 0 16 16" fill="currentColor">
+                            <path
+                                d="M12.7 1a.7.7 0 0 0-.7.7v5.15L2.05 1.107A.7.7 0 0 0 1 1.712v12.575a.7.7 0 0 0 1.05.607L12 9.149V14.3a.7.7 0 0 0 .7.7h1.6a.7.7 0 0 0 .7-.7V1.7a.7.7 0 0 0-.7-.7h-1.6z" />
+                        </svg></button>
+                    <button class="player-btn"><svg viewBox="0 0 16 16" fill="currentColor">
+                            <path
+                                d="M0 4.75A3.75 3.75 0 0 1 3.75 1h8.5A3.75 3.75 0 0 1 16 4.75v5a3.75 3.75 0 0 1-3.75 3.75H9.81l-2.067 2.066a.75.75 0 0 1-1.28-.53v-1.536A3.75 3.75 0 0 1 0 9.75v-5zm3.75-2.25A2.25 2.25 0 0 0 1.5 4.75v5A2.25 2.25 0 0 0 3.75 12h3.207v1.75l1.75-1.75h3.543A2.25 2.25 0 0 0 14.5 9.75v-5A2.25 2.25 0 0 0 12.25 2.5h-8.5z" />
+                        </svg></button>
+                </div>
+                <div class="playback-bar">
+                    <span class="time">1:24</span>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 40%;"></div>
+                    </div>
+                    <span class="time">3:42</span>
+                </div>
+            </div>
+
+            <div class="extra-controls">
+                <button class="player-btn"><svg viewBox="0 0 16 16" fill="currentColor">
+                        <path
+                            d="M11.196 8l4.475-4.474a.75.75 0 1 0-1.06-1.061L10.136 6.94 5.66.465a.75.75 0 0 0-1.06 1.06L9.074 6H1.5a.75.75 0 0 0 0 1.5h7.574l-4.474 4.475a.75.75 0 0 0 1.06 1.06L10.136 8.56l4.475 4.475a.75.75 0 0 0 1.06-1.06L11.196 8z" />
+                    </svg></button>
+                <button class="player-btn"><svg viewBox="0 0 16 16" fill="currentColor">
+                        <path
+                            d="M9.741.85a.75.75 0 0 1 .374.65v13a.75.75 0 0 1-1.162.626l-5.642-3.824H.75A.75.75 0 0 1 0 10.554V5.446a.75.75 0 0 1 .75-.75h3.061l5.642-4.13a.75.75 0 0 1 .288-.116z" />
+                    </svg></button>
+                <div class="progress-bar small-bar">
+                    <div class="progress" style="width: 70%;"></div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Modal Overlay -->
+        <div class="modal-overlay" id="modal-overlay" onclick="closeModal()">
+            <div class="modal-content" id="modal-content" onclick="event.stopPropagation()">
+                <button class="close-modal" onclick="closeModal()">×</button>
+                <div id="modal-dynamic-content"></div>
+            </div>
+        </div>
+
+        <!-- Skills Modal Overlay -->
+        <div class="modal-overlay" id="skills-overlay" onclick="closeSkillsModal()">
+            <div class="modal-content skills-modal-content" onclick="event.stopPropagation()">
+                <button class="close-modal" onclick="closeSkillsModal()">×</button>
+                <h2 style="margin-bottom: 24px; color: white;">All Skills</h2>
+                <div class="skills-grid-expanded">
+                    <div class="skills-item">
+                        <img src="./Photos/js.png" alt="JavaScript">
+                        <span class="skill-title">JavaScript</span><span class="skill-sub">Programming</span>
+                    </div>
+                    <div class="skills-item">
+                        <img src="./Photos/python.png" alt="Python">
+                        <span class="skill-title">Python</span><span class="skill-sub">Programming</span>
+                    </div>
+                    <div class="skills-item">
+                        <img src="./Photos/react.png" alt="React">
+                        <span class="skill-title">React</span><span class="skill-sub">Framework</span>
+                    </div>
+                    <div class="skills-item">
+                        <img src="./Photos/node.png" alt="Node.js">
+                        <span class="skill-title">Node.js</span><span class="skill-sub">Runtime</span>
+                    </div>
+                    <div class="skills-item">
+                        <img src="./Photos/ionic.png" alt="Ionic">
+                        <span class="skill-title">Ionic</span><span class="skill-sub">Mobile</span>
+                    </div>
+                    <div class="skills-item">
+                        <img src="./Photos/html.png" alt="HTML5">
+                        <span class="skill-title">HTML5</span><span class="skill-sub">Markup</span>
+                    </div>
+                    <div class="skills-item">
+                        <img src="./Photos/css.png" alt="CSS">
+                        <span class="skill-title">CSS</span><span class="skill-sub">Styling</span>
+                    </div>
+                    <div class="skills-item">
+                        <img src="https://picsum.photos/seed/git/150/150" alt="Git">
+                        <span class="skill-title">Git</span><span class="skill-sub">Version Control</span>
+                    </div>
+                    <div class="skills-item">
+                        <img src="https://picsum.photos/seed/awq/150/150" alt="AWS">
+                        <span class="skill-title">AWS</span><span class="skill-sub">Cloud computing</span>
+                    </div>
+                    <div class="skills-item">
+                        <img src="https://picsum.photos/seed/sql/150/150" alt="Docker">
+                        <span class="skill-title">Docker</span><span class="skill-sub">System</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
